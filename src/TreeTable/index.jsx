@@ -33,7 +33,7 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, d
                                             setRowsData(newData);
                                         }}
                                     >
-                                        {d.state.opened ? <span className="icon icon-chevron-thin-up" /> : <span className="icon icon-chevron-thin-down" />}
+                                        {d.state.opened ? <span className="fa fa-angle-up" /> : <span className="fa fa-angle-down" />}
                                     </button>
                                 ) : null
                             }
