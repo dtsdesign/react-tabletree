@@ -1,5 +1,4 @@
 import React from 'react';
-import '../custom_bootstrap';
 import './index.scss';
 import TreeTable from './TreeTable';
 function App() {
