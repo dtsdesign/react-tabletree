@@ -1,4 +1,5 @@
 import React from 'react';
+import '../shared';
 import './index.scss';
 import TreeTable from './TreeTable';
 function App() {
