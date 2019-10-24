@@ -1,5 +1,5 @@
 import React from 'react';
-import '../shared';
+import './shared/shared.js';
 import './index.scss';
 import TreeTable from './TreeTable';
 function App() {

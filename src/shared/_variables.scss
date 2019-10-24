@@ -1,0 +1,77 @@
+/* Variable overrides for bootstrap */
+/* see: http://getbootstrap.com/docs/3.3/customize/ */
+
+/* colors */
+$blue: #287BC6;
+$dark: #38322F;
+$darker: #2c2623;
+$reverse-text: #f0f0f0;
+$brand-primary: #648c1a;
+// $brand-success: #1ccb8b;
+// $brand-danger: #FF6823;
+// $brand-warning: #FFA423;
+// $brand-info: #72ABDE;
+
+/* navbar */
+$navbar-margin-bottom: 0;
+$navbar-height: 80px;
+$navbar-default-link-color: $dark;
+$navbar-default-link-hover-color: $brand-primary;
+$navbar-default-toggle-border-color: transparent;
+$navbar-default-toggle-hover-bg: transparent;
+$navbar-default-link-active-color: $brand-primary;
+$navbar-default-link-active-bg: transparent;
+
+/* scaffolding */
+$body-bg: #f6f6f6;
+$text-color: #222;
+$link-color: $blue;
+
+/* typography */
+$font-family-sans-serif: "Open Sans", Arial, sans-serif;
+$headings-font-family: "Helvetica Black", "Arial Black", sans-serif;
+
+/* components*/
+// $padding-base-vertical: 3px;
+// $padding-base-horizontal: 20px;
+$border-radius-large: 0;
+$border-radius-small: 0;
+$border-radius-base: 0;
+
+/* buttons */
+$btn-font-weight: 600;
+$btn-border-radius-base: 0;
+
+// /*alerts*/
+// $alert-info-bg: #404040;
+// $alert-info-text: #fff;
+// $alert-info-border: #202020;
+// $state-warning-bg: #f3db8c;
+// $state-warning-text: #202020;
+
+// /* popovers */
+// $popover-bg: $dark;
+// $popover-title-bg: $brand-primary;
+
+// /* tooltips */
+// $tooltip-bg: $dark;
+// $tooltip-opacity: 1;
+
+// /* forms */
+// $input-height-small: 22px;
+// $padding-small-vertical: 0;
+
+/* panels */
+$panel-default-heading-bg: $dark;
+$panel-default-border: $dark;
+$panel-default-text: $reverse-text;
+
+/* tables */
+$table-bg: #fff;
+
+/* pagination */
+$pagination-active-bg: $dark;
+$pagination-active-border: $darker;
+
+/* other */
+$page-header-border-color: #d0d0d0;
