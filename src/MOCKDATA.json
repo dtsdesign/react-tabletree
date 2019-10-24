@@ -1,0 +1,188 @@
+[
+  {
+    "id": 129,
+    "label": "Endigo ZC",
+    "sumTotalAmount": "33.347",
+    "sumTotalAreaApplied": "133.387",
+    "sumTotalCost": "$133.39",
+    "children": [
+      {
+        "id": 376,
+        "label": "Ohio",
+        "sumTotalAmount": "33.347",
+        "sumTotalAreaApplied": "133.387",
+        "sumTotalCost": "$133.39",
+        "children": [
+          {
+            "id": 245,
+            "label": "Ohio City Branch",
+            "sumTotalAmount": "33.347",
+            "sumTotalAreaApplied": "133.387",
+            "sumTotalCost": "$133.39",
+            "children": [
+              {
+                "id": 650,
+                "label": "Randy Roe",
+                "sumTotalAmount": "33.347",
+                "sumTotalAreaApplied": "133.387",
+                "sumTotalCost": "$133.39",
+                "children": [
+                  {
+                    "id": 356,
+                    "label": "Adam Farmer",
+                    "sumTotalAmount": "33.347",
+                    "sumTotalAreaApplied": "133.387",
+                    "sumTotalCost": "$133.39",
+                    "children": [
+                      {
+                        "id": 228,
+                        "label": "Triple R Farms S",
+                        "sumTotalAmount": "33.347",
+                        "sumTotalAreaApplied": "133.387",
+                        "sumTotalCost": "$133.39",
+                        "children": [
+                          {
+                            "id": 915,
+                            "label": "RANK",
+                            "sumTotalAmount": "33.347",
+                            "sumTotalAreaApplied": "133.387",
+                            "sumTotalCost": "$133.39",
+                            "children": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 51,
+    "label": "NIS 90:10",
+    "sumTotalAmount": "1,333.870",
+    "sumTotalAreaApplied": "133.387",
+    "sumTotalCost": "$133.39",
+    "children": [
+      {
+        "id": 881,
+        "label": "Ohio",
+        "sumTotalAmount": "1,333.870",
+        "sumTotalAreaApplied": "133.387",
+        "sumTotalCost": "$133.39",
+        "children": [
+          {
+            "id": 192,
+            "label": "Ohio City Branch",
+            "sumTotalAmount": "1,333.870",
+            "sumTotalAreaApplied": "133.387",
+            "sumTotalCost": "$133.39",
+            "children": [
+              {
+                "id": 423,
+                "label": "Randy Roe",
+                "sumTotalAmount": "1,333.870",
+                "sumTotalAreaApplied": "133.387",
+                "sumTotalCost": "$133.39",
+                "children": [
+                  {
+                    "id": 604,
+                    "label": "Adam Farmer",
+                    "sumTotalAmount": "1,333.870",
+                    "sumTotalAreaApplied": "133.387",
+                    "sumTotalCost": "$133.39",
+                    "children": [
+                      {
+                        "id": 384,
+                        "label": "Triple R Farms S",
+                        "sumTotalAmount": "1,333.870",
+                        "sumTotalAreaApplied": "133.387",
+                        "sumTotalCost": "$133.39",
+                        "children": [
+                          {
+                            "id": 966,
+                            "label": "RANK",
+                            "sumTotalAmount": "1,333.870",
+                            "sumTotalAreaApplied": "133.387",
+                            "sumTotalCost": "$133.39",
+                            "children": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 645,
+    "label": "Warrior II with Zeon Technology",
+    "sumTotalAmount": "33.347",
+    "sumTotalAreaApplied": "133.387",
+    "sumTotalCost": "$133.39",
+    "children": [
+      {
+        "id": 62,
+        "label": "Ohio",
+        "sumTotalAmount": "33.347",
+        "sumTotalAreaApplied": "133.387",
+        "sumTotalCost": "$133.39",
+        "children": [
+          {
+            "id": 961,
+            "label": "Ohio City Branch",
+            "sumTotalAmount": "33.347",
+            "sumTotalAreaApplied": "133.387",
+            "sumTotalCost": "$133.39",
+            "children": [
+              {
+                "id": 693,
+                "label": "Randy Roe",
+                "sumTotalAmount": "33.347",
+                "sumTotalAreaApplied": "133.387",
+                "sumTotalCost": "$133.39",
+                "children": [
+                  {
+                    "id": 401,
+                    "label": "Adam Farmer",
+                    "sumTotalAmount": "33.347",
+                    "sumTotalAreaApplied": "133.387",
+                    "sumTotalCost": "$133.39",
+                    "children": [
+                      {
+                        "id": 591,
+                        "label": "Triple R Farms S",
+                        "sumTotalAmount": "33.347",
+                        "sumTotalAreaApplied": "133.387",
+                        "sumTotalCost": "$133.39",
+                        "children": [
+                          {
+                            "id": 467,
+                            "label": "RANK",
+                            "sumTotalAmount": "33.347",
+                            "sumTotalAreaApplied": "133.387",
+                            "sumTotalCost": "$133.39",
+                            "children": null
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

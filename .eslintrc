@@ -1,0 +1,3 @@
+{
+    "extends": ["@jmfolds/eslint-config-react"]
+}
