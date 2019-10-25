@@ -292,22 +292,22 @@ function App(props) {
     }
 
     useEffect(() => {
-        reportList.addEventListener('change', handleReportChange);
-        yearList.addEventListener('change', handleYearChange);
-        generateBtn.addEventListener('click', getReportDefinition);
+        // reportList.addEventListener('change', handleReportChange);
+        // yearList.addEventListener('change', handleYearChange);
+        // generateBtn.addEventListener('click', getReportDefinition);
 
         return () => {
-            reportList.removeEventListener('change', handleReportChange);
-            yearList.removeEventListener('change', handleYearChange);
-            generateBtn.removeEventListener('click', getReportDefinition);
+            // reportList.removeEventListener('change', handleReportChange);
+            // yearList.removeEventListener('change', handleYearChange);
+            // generateBtn.removeEventListener('click', getReportDefinition);
         };
     }, [year, selectedReport, errorMsg]);
     return (
         <div className="retailer-reports-app">
             <ul className="nav nav-tabs">
-                <li role="presentation" className=""><a href="#Chemicals">Chemicals</a></li>
-                <li role="presentation" className=""><a href="#Nutrients">Nutrients</a></li>
-                <li role="presentation" className="active"><a href="#Seeds">Seeds</a></li>
+                <li role="presentation" className=""><a>Chemicals</a></li>
+                <li role="presentation" className=""><a>Nutrients</a></li>
+                <li role="presentation" className="active"><a>Seeds</a></li>
             </ul>
             <div style={{ padding: '2rem', paddingTop: '0', border: 'solid 1px' }}>
                 {data && cols ? (
