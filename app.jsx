@@ -305,14 +305,9 @@ function App(props) {
     return (
         <div className="retailer-reports-app">
             <ul className="nav nav-tabs">
-                {productTypes.map((pt) => {
-                    const active = pt.title === selectedType;
-                    return (
-                        <li key={pt.title} role="presentation" className={active ? 'active' : ''}>
-                            <a onClick={handleTabClick} onKeyUp={handleTabClick} href={`#${pt.title}`}>{pt.title}</a>
-                        </li>
-                    );
-                })}
+                <li role="presentation" className=""><a href="#Chemicals">Chemicals</a></li>
+                <li role="presentation" className=""><a href="#Nutrients">Nutrients</a></li>
+                <li role="presentation" className="active"><a href="#Seeds">Seeds</a></li>
             </ul>
             <div style={{ padding: '2rem', paddingTop: '0', border: 'solid 1px' }}>
                 {data && cols ? (
