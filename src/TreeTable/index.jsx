@@ -17,7 +17,7 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parent, dep
             appear
             key={d.id}
             in={d.state.opened}
-            classNames="alert"
+            classNames="transition-name"
             timeout={250}>
                 <tr>
                     {columns.map((col, idx) => {
