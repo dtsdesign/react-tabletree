@@ -1,17 +1,26 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import './index.scss';
 import dataToCsv from './dataToCsv';
 
-function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, depth = 0) {
+function getTableRows({ data, columns, setRowsData }, rowsData = [], parent, depth = 0) {
     depth += 1;
     data.forEach((d) => {
         if (!d.state) {
-            d.state = {};
+            d.state = {
+                parentId: parent ? parent.id : undefined
+            };
         }
         rowsData.push((
-            <tr key={d.id}>
-                {columns.map((col, idx) => {
+            <CSSTransition
+            appear
+            key={d.id}
+            in={d.state.opened}
+            classNames="alert"
+            timeout={250}>
+                <tr>
+                    {columns.map((col, idx) => {
                     const hasPadding = depth > 1 && idx === 0;
                     const paddingLeft = hasPadding ? `${depth * 1.5}rem` : '';
                     return (
@@ -41,10 +50,11 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, d
                         </td>
                     );
                 })}
-            </tr>
+                </tr>
+            </CSSTransition>
         ));
         if (d.children && d.state.opened) {
-            getTableRows({ data: d.children, columns, setRowsData }, rowsData, d.id, depth);
+            getTableRows({ data: d.children, columns, setRowsData }, rowsData, d, depth);
         }
     });
     return rowsData;
@@ -53,7 +63,11 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, d
 function TreeTable(props) {
     const { columns, data, filename } = props;
     const setRowsData = useState([])[1];
-    const rows = getTableRows({ data, columns, setRowsData });
+    function intermediate(newRows) {
+        console.log(newRows);
+        setRowsData(newRows);
+    }
+    const rows = getTableRows({ data, columns, setRowsData: intermediate });
     return (
         <div>
             <button
@@ -80,7 +94,9 @@ function TreeTable(props) {
                     </tr>
                 </thead>
                 <tbody>
-                    {rows}
+                    <TransitionGroup component={null}>
+                        {rows}
+                    </TransitionGroup>
                 </tbody>
             </table>
         </div>
