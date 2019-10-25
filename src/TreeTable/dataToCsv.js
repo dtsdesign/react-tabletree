@@ -19,7 +19,7 @@ export default function dataToCsv({
     const rows = getRows(data, columns);
     const header = [];
     columns.forEach((c) => {
-        header.push(c.label);
+        header.push(c.title);
     });
     // remove ignored columns passed in for each row
     if (ignoredColumnIndexes.length) {

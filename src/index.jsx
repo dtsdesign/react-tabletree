@@ -8,7 +8,9 @@ function App() {
     // }, []);
 
     return (
-       <div className="container app-body">
+        <div className="container app-body">
+
+
             <div className="page-header">
                 <h2>Reports <small>Retailer</small></h2>
                 <p className="lead">Product Summary Report.</p>
@@ -40,7 +42,6 @@ function App() {
                             </div>
                         </div>
                     </div>
-
                 <div className="retailer-reports-app">
                       <ul className="nav nav-tabs">
                           <li role="presentation" className="active"><a href="#Chemicals">Chemicals</a></li>

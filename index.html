@@ -6,6 +6,51 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   </head>
   <body>
-    <div id="root"></div>
+<div class="container app-body">
+<div class="page-header">
+    <h2>Reports <small>Retailer</small></h2>
+    <p class="lead">Product Summary Report.</p>
+</div>
+<div class="row">
+    <div class="col-xs-12 app-workspace">
+        <div class="form-horizontal">
+            <div id="alert-container"></div>
+            <div class="alert alert-warning alert-dismissible" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    Viewing this page as <strong>retailer-supervisor</strong> role.
+</div>
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-sm-offset-2" for="Year">Year</label>
+                <div class="col-sm-6">
+                    <select class="form-control" id="year-list" name="year-list"><option value="">-- Choose --</option>
+<option value="2019">2019</option>
+</select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2 col-sm-offset-2" for="Report">Report</label>
+                <div class="col-sm-6">
+                    <select id="report-list" class="form-control">
+                        <option value="">-- Choose --</option>
+                            <option value="1" data-api="/api/retailer/3/reports/1">Product Summary</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-8">
+                    <button id="generate" class="btn btn-primary">Generate</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="root"></div>
+    </div>
+    
+<a class="" href="/plan/retailer/home">Back to Home</a>
+</div>
+
+
+
+    </div>
   </body>
 </html>

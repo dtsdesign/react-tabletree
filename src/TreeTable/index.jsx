@@ -1,25 +1,24 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import './index.scss';
 import dataToCsv from './dataToCsv';
+import './index.scss';
 
-function getTableRows({ data, columns, setRowsData }, rowsData = [], parent, depth = 0) {
+
+function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, depth = 0) {
     depth += 1;
     data.forEach((d) => {
         if (!d.state) {
-            d.state = {
-                parentId: parent ? parent.id : undefined
-            };
+            d.state = {};
         }
         rowsData.push((
             <CSSTransition
-            appear
+            // appear
             key={d.id}
             in={d.state.opened}
-            classNames="transition-name"
+            classNames="my-node"
             timeout={250}>
-                <tr>
+                <tr key={d.id}>
                     {columns.map((col, idx) => {
                     const hasPadding = depth > 1 && idx === 0;
                     const paddingLeft = hasPadding ? `${depth * 1.5}rem` : '';
@@ -54,57 +53,33 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parent, dep
             </CSSTransition>
         ));
         if (d.children && d.state.opened) {
-            getTableRows({ data: d.children, columns, setRowsData }, rowsData, d, depth);
+            getTableRows({ data: d.children, columns, setRowsData }, rowsData, d.id, depth);
         }
     });
     return rowsData;
 }
 
 function TreeTable(props) {
-    const { columns, data, filename } = props;
+    const { columns, data } = props;
     const setRowsData = useState([])[1];
-    function intermediate(newRows) {
-        console.log(newRows);
-        setRowsData(newRows);
-    }
-    const rows = getTableRows({ data, columns, setRowsData: intermediate });
+    const rows = getTableRows({ data, columns, setRowsData });
     return (
-        <div>
-            <button
-                type="button"
-                style={{ float: 'right', margin: '1rem 0' }}
-                className="btn btn-primary"
-                onClick={() => {
-                    if (!data.length) {
-                        return;
-                    }
-                    dataToCsv({
-                        filename,
-                        data,
-                        columns,
-                    });
-                }}
-            >
-                Export
-            </button>
-            <table className="tree-table table table-bordered">
-                <thead>
-                    <tr>
-                        {columns.map((col, idx) => <th key={col.title + idx}>{col.title}</th>)}
-                    </tr>
-                </thead>
-                <tbody>
-                    <TransitionGroup component={null}>
-                        {rows}
-                    </TransitionGroup>
-                </tbody>
-            </table>
-        </div>
+        <table className="tree-table table table-bordered">
+            <thead>
+                <tr>
+                    {columns.map((col, idx) => <th key={col.title + idx}>{col.title}</th>)}
+                </tr>
+            </thead>
+            <tbody>
+                <TransitionGroup component={null}>
+                    {rows}
+                </TransitionGroup>
+            </tbody>
+        </table>
     );
 }
 
 TreeTable.propTypes = {
-    filename: PropTypes.string,
     columns: PropTypes.arrayOf(PropTypes.shape({
         // id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
         data: PropTypes.string,
@@ -116,8 +91,6 @@ TreeTable.propTypes = {
     })).isRequired,
 };
 
-TreeTable.defaultProps = {
-    filename: 'treetable-export'
-};
-
 export default TreeTable;
+
+export { dataToCsv };
