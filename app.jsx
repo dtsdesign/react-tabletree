@@ -319,6 +319,12 @@ function App(props) {
                             Collapse All
                         </button>
                         <button
+                            style={{ margin: '1rem 0' }}
+                            className="btn btn-primary"
+                        >
+                            Expand All
+                        </button>
+                        <button
                             type="button"
                             style={{ float: 'right', margin: '1rem 0' }}
                             className="btn btn-primary"
