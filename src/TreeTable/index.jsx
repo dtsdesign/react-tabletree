@@ -21,7 +21,7 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, d
                 <tr key={d.id}>
                     {columns.map((col, idx) => {
                     const hasPadding = depth > 1 && idx === 0;
-                    const paddingLeft = hasPadding ? `${depth * 1.5}rem` : '';
+                    const paddingLeft = hasPadding ? `${depth * 0.75}rem` : '';
                     return (
                         <td
                             key={col.title + idx}
