@@ -1,58 +1,35 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import TableRow from './TableRow';
 import dataToCsv from './dataToCsv';
 import './index.scss';
-
 
 function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, depth = 0) {
     depth += 1;
     data.forEach((d) => {
-        if (!d.state) {
-            d.state = {};
-        }
         rowsData.push((
             <CSSTransition
-            // appear
-            key={d.id}
-            in={d.state.opened}
-            classNames="my-node"
+            mountOnEnter
+            unmountOnExit
+            id={parentId ? `${parentId}-${d.id}` : d.id}
+            key={parentId ? `${parentId}-${d.id}` : d.id}
+            in={d.opened}
+            classNames="slide-row"
             timeout={250}>
-                <tr key={d.id}>
-                    {columns.map((col, idx) => {
-                    const hasPadding = depth > 1 && idx === 0;
-                    const paddingLeft = hasPadding ? `${depth * 0.75}rem` : '';
-                    return (
-                        <td
-                            key={col.title + idx}
-                            style={{
-                                width: col.width,
-                                paddingLeft,
-                            }}
-                        >
-                            { idx === 0 && d.children
-                                ? (
-                                    <button
-                                        type="button"
-                                        className="btn btn-primary btn-xs"
-                                        onClick={() => {
-                                            d.state.opened = !d.state.opened;
-                                            const newData = rowsData.map(rowData => rowData);
-                                            setRowsData(newData);
-                                        }}
-                                    >
-                                        {d.state.opened ? <span className="fa fa-angle-up" /> : <span className="fa fa-angle-down" />}
-                                    </button>
-                                ) : null
-                            }
-                            {col.data ? <span>{d[col.data]}</span> : null }
-                        </td>
-                    );
-                })}
-                </tr>
+                <TableRow
+                    data={d}
+                    columns={columns}
+                    depth={depth}
+                    onToggle={() => {
+                        d.opened = !d.opened;
+                        const newData = data.map(rowData => rowData);
+                        setRowsData(newData);
+                    }}
+                />
             </CSSTransition>
         ));
-        if (d.children && d.state.opened) {
+        if (d.children && d.opened) {
             getTableRows({ data: d.children, columns, setRowsData }, rowsData, d.id, depth);
         }
     });
@@ -61,8 +38,16 @@ function getTableRows({ data, columns, setRowsData }, rowsData = [], parentId, d
 
 function TreeTable(props) {
     const { columns, data } = props;
-    const setRowsData = useState([])[1];
-    const rows = getTableRows({ data, columns, setRowsData });
+    const [rowsData, setRowsData] = useState(data);
+    React.useEffect(() => {
+        setRowsData(data);
+    }, [data]);
+    const rows = getTableRows({
+        data: rowsData,
+        columns,
+        setRowsData: () => {
+            setRowsData([...rowsData]);
+        } });
     return (
         <table className="tree-table table table-bordered">
             <thead>
@@ -72,7 +57,15 @@ function TreeTable(props) {
             </thead>
             <tbody>
                 <TransitionGroup component={null}>
-                    {rows}
+                    {rows && rows.length ? rows : (
+                        <CSSTransition timeout={0}>
+                            <tr>
+                                <td style={{ textAlign: 'center' }} colSpan={columns.length}>
+                                    No data
+                                </td>
+                            </tr>
+                        </CSSTransition>
+                    )}
                 </TransitionGroup>
             </tbody>
         </table>
