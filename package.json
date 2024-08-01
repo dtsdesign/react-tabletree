@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "3.3.7",
+    "bootstrap-sass": "3.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "16.9.0",
